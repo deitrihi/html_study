@@ -1,40 +1,61 @@
-<html>
-  <head>
-    <title>DIV Layout Exam</title>
-  </had>
-  <body>
-    <h1>HTML Study Sample Site</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS Layout</title>
+<link href="layout.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>CSS Layout</h1>
+<div id="center">
+  <div id="menu">
+    <h2>샘플</h2>
+    <ul>
+      <li><a href="./No1_DivLayoutExam.html">DIV Layout Exam</a></li>
+    </ul>
+  </div>
+  <div id="content">
     <h3>DIV Layout Exam</h3>
-    <h4>1</h4>
-    <div style="width:100%; overflow:hidden;">
-      <div style="float:left; background:green; width:50%; height:20px;"></div>
-      <div style="float:left; background:skyblue; width:50%; height:20px;"></div>
-    </div>
-    <div style="width:100%; overflow:hidden;">
-      <div style="float:left; background:blue; width:33%; height:20px;"></div>
-      <div style="float:left; background:red; width:33%; height:20px;"></div>
-      <div style="float:left; background:pink; width:34%; height:20px;"></div>
-    </div>
+    <div id="text">
+      <h4>1</h4>
+      <div style="width:100%; overflow:hidden;">
+        <div style="float:left; background:green; width:50%; height:20px;"></div>
+        <div style="float:left; background:skyblue; width:50%; height:20px;"></div>
+      </div>
+      <div style="width:100%; overflow:hidden;">
+        <div style="float:left; background:blue; width:33%; height:20px;"></div>
+        <div style="float:left; background:red; width:33%; height:20px;"></div>
+        <div style="float:left; background:pink; width:34%; height:20px;"></div>
+      </div>
 
-    <h4>2</h4>
-    <div style="width:100%; overflow:hidden;">
-      <div style="float:left; background:red; width:50%; height:20px;"></div>
-      <div style="float:left; background:blue; width:50%; height:20px;"></div>
-      <div style="clear:both; float:left; background:green; width:33%; height:20px;"></div>
-      <div style="float:left; background:cyan; width:33%; height:20px;"></div>
-      <div style="float:left; background:yellow; width:33%; height:20px;"></div>
+      <h4>2</h4>
+      <div style="width:100%; overflow:hidden;">
+        <div style="float:left; background:red; width:50%; height:20px;"></div>
+        <div style="float:left; background:blue; width:50%; height:20px;"></div>
+        <div style="clear:both; float:left; background:green; width:33%; height:20px;"></div>
+        <div style="float:left; background:cyan; width:33%; height:20px;"></div>
+        <div style="float:left; background:yellow; width:34%; height:20px;"></div>
+      </div>
+
+      <h4 style="width:100%;overflow:hidden;">3</h4>
+      <div style="float:left; background:red; width:50px; height:40px;"></div>
+      <div style="background:yellow; width:100px; margin-left:50px; height:20px;"></div>
+      <div style="float:left; background:cyan; width:50px; height:20px;"></div>
+      <div style="float:left; background:green; width:50px; height:20px;"></div>
+
+      <h4 style="width:100%;overflow:hidden;">4</h4>
+      <div style="float:left; background:red; width:50%; height:60px;"></div>
+      <div style="background:yellow; width:100%; height:20px;">1</div>
+      <div style="background:cyan; width:100%; height:20px;">2</div>
+      <div style="background:green; width:100%; height:20px;">3</div>
     </div>
-
-    <h4>3</h4>
-    <div style="float:left; background:red; width:50px; height:40px;"></div>
-    <div style="background:yellow; width:100px; margin-left:50px; height:20px;"></div>
-    <div style="float:left; background:cyan; width:50px; height:20px;"></div>
-    <div style="float:left; background:green; width:50px; height:20px;"></div>
-
-    <h4>4</h4>
-    <div style="float:left; background:red; width:50%; height:60px;"></div>
-    <div style="background:yellow; width:100%; height:20px;">1</div>
-    <div style="background:cyan; width:100%; height:20px;">2</div>
-    <div style="background:green; width:100%; height:20px;">3</div>
-  </body>
+  </div>
+  <div id="links">
+    <h3>Links</h3>
+    <ul>
+      <li>Link List 1</li>
+    </ul>
+  </div>
+</div>
+</body>
 </html>
