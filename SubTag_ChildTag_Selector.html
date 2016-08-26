@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TEST</title>
+  <style>
+  * { margin:0; padding:0; font-size:small; font-family:"나눔고딕코딩","NanumGothicCoding","나눔고딕","NanumGothic","malgun gothic"; color:#FFF; }
+
+  #content { color:skyblue; font-weight:bold;}
+  #content * {margin:5px 5px 5px 5px;border:solid 1px white;  }
+  #content div { color:gray; }
+  #content > div { color:red; }
+
+  #headerTest * { color:skyblue; }
+  #headerTest h1 ~ h2 { color:red; }
+  #headerTest h1 + h2 { color:white; }
+  </style>
+</head>
+<body>
+  <pre>
+#content { color:skyblue; font-weight:bold;}
+#content * {margin:5px 5px 5px 5px;border:solid 1px white;  }
+#content div { color:gray; }
+#content > div { color:red; }
+  </pre>
+  <div id="content">
+    CONTENT ( 본인 )
+    <div>자손 CONTENT DIV</div>
+    <ul>
+      <li>LI 1</li>
+      <li>LI 2</li>
+      <li>LI 3</li>
+      <li>LI 4</li>
+    </ul>
+    <div>
+      자손 CONTENT DIV
+      <div>
+        후손 CONTENT DIV DIV
+      </div>
+    </div>
+  </div>
+  <div>동위 선택자</div>
+  <div id="headerTest">
+    <h1>Header 1 - 1</h1>
+    <h1>Header 1 - 2</h1>
+    <h2>Header 2 - 1</h2>
+    <h2>Header 2 - 2</h2>
+    <h2>Header 2 - 3</h2>
+    <h2>Header 2 - 4</h2>
+    <h2>Header 2 - 5</h2>
+    <h2>Header 2 - 6</h2>
+    <h2>Header 2 - 7</h2>
+  </div>
+</body>
+</html>
