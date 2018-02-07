@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Javascript Module System</title>
+    <link href="../layout.css" rel="stylesheet" type="text/css" />
+    <!-- <script type="text/javascript" src="./js/jsmodule/a.js"></script>
+    <script type="text/javascript" src="./js/jsmodule/b.js"></script> -->
+    <script type="text/javascript" src="./js/jsmodule/b_o.js"></script>
+    <script type="text/javascript" src="./js/jsmodule/d_o.js"></script>
+    <script type="text/javascript" src="./js/jsmodule/c_o.js"></script>
+    
+    <!-- <script type="text/javascript" src="./js/jsmodule/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/jsmodule/jquery-3.3.1.min.js"></script> -->
+    
+</head>
+<body>
+<h1>Javascript Test</h1>
+<div id="center">
+  <div id="menu">
+    <h2>샘플</h2>
+    <ul>
+      <li><a href="./letExam.html">let Exam</a></li>
+      <li><a href="./promiseExam.html">Promise Exam</a></li>
+      <li><a href="./jsmodule.html">JS Mobule</a></li>
+      <li><a href="./forof.html">For ~ of</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h3>JS Module</h3>
+    <div class="text">
+      Javascript 모듈 시스템은, 기존에 Javascript가 가지는 리소스 관리의 문제점을 해결하기 위한 방안. 
+      기존에는 리소스의 로딩 순서도 중요하며, 공용 리소스의 경우 다른 스크립트에 영향을 끼치지 않는지 살펴야 하며, 변수명이 중복되지 않는지도 살펴봐야 하는 문제가 있음.
+    </div>
+    <h3>기존 문제점</h3>
+    <div class="text">
+      A.js 에서는 jQuery 1.10 버전에 종속되고, 
+      B.js 에서는 jQuery 3.1 버전에 종속된다고 하였을 때, 
+      conflic을 해결하기 위해서는 _noConflic과 같은 처리를 별도로 해야 하며, <br/>
+      또는 A.js와, B.js 모두 jQuery를 사용하고 있는데, A.js가 먼저 로드 되고, B.js가 로드된다고 하였을 경우 A.js의 마지막에 $ = null; 과 같이 선언해 버렸을 경우 B.js에서 $를 호출하면 에러가 발생할 수 있음.
+    </div>
+    <h3>ES6의 모듈시스템</h3>
+    <div class="text">
+      export와, import를 이용하여, 모듈 시스템을 이용 할 수는 있지만, 아직 브라우저에서 지원하지 않아서, nodejs의 webpack등을 이용해서 번들화 시켜야 함.
+    </div>
+  </div>
+  <div id="links">
+    <h3>Links</h3>
+    <ul>
+      <li>TEST</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

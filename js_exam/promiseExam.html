@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Promise Exam</title>
+    <link href="../layout.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/promisejs.js"></script>
+</head>
+<body>
+<h1>Javascript Test</h1>
+<div id="center">
+  <div id="menu">
+    <h2>샘플</h2>
+    <ul>
+      <li><a href="./letExam.html">let Exam</a></li>
+      <li><a href="./promiseExam.html">Promise Exam</a></li>
+      <li><a href="./jsmodule.html">JS Mobule</a></li>
+      <li><a href="./forof.html">For ~ of</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h3>Promise</h3>
+    <div class="text">
+      promise : 비동기 함수들이 순차적으로 실행되어야 할 경우 callback 함수를 이용하게 되는데, 이럴 경우 callback-hell이 발생할 경우 가독성이 떨어지게 되어, 이를 해결하기 위한 새로운 키워드
+      <br/>
+      <br/>
+      <pre>
+      function 함수명(파라메터){
+        return new Promise(function(resolve, reject){ 
+          // 할일 --> 비동기 함수 프로그래밍
+          // 비동기 함수가 성공적으로 실행 될 경우 resolve가 호출되며, 
+          // 비동기 함수가 실패할 경우 reject가 호출됩니다.
+        });
+      }
+
+        function myPromise(value) {
+            return new Promise(function(resolve, reject) {
+                console.log("3초 후 인사메세지를 출력합니다..");
+                setTimeout(function(){
+                if(value){
+                    console.log("안녕하세요!");
+                    resolve("성공");
+                }
+                else {
+                    reject(Error("실패"));
+                }
+                }, 3000);
+            });
+        }
+        
+        function myResolve(value){
+        console.log("resolved: ", value);
+        } 
+        
+        function myReject(value){
+        console.log("rejected: ", value);
+        }
+        
+        myPromise(true).then(myResolve,myReject); // myResolve 실행
+        myPromise(false).then(myResolve,myReject); // myReject 실행
+
+        </pre>
+        <pre>
+            $.ajax({
+                url : './layout.css',
+                type: 'GET',
+                success : function(result1) {
+                    var posts = result1.data;
+                    $.ajax({
+                    url : './layout.css',
+                    type: 'GET',
+                    success : function(result2){
+                        var post = result2.data;
+                        $.ajax({
+                        url : './layout.css',
+                        type: 'GET',
+                        success : function(result3){
+                            // user로 할일 - 3
+                            console.log('PostAuthor');
+                        }
+                        });
+                        // 그외 post로 할일 - 2
+                        console.log('FirstPosts');
+                    }
+                    });
+                    // 그외 posts로 할일 - 1
+                    console.log('Posts');
+                }
+            });
+
+        -->
+        function getPosts(){
+            return new Promise(function(resolve, reject){
+                $.ajax({
+                url : './layout.css',
+                type: 'GET',
+                success : function(result){
+                    var posts = result.data
+                    resolve(posts);
+                    // 그외 posts로 할일 - 1
+                    console.log('Posts');
+                }
+                });
+            });
+        }
+            
+        function getFirstPost(posts){
+            return new Promise(function(resolve, reject){
+                $.ajax({
+                url : './layout.css',
+                type: 'GET',
+                success : function(result){
+                    var post = result.data
+                    resolve(post);
+                    // 그외 post로 할일 - 2
+                    console.log('FirstPosts');
+                },
+                });
+            });
+        }
+            
+        function getPostAuthor(posts){
+            return new Promise(function(resolve, reject){
+                $.ajax({
+                url : './layout.css',
+                type: 'GET',
+                success : function(result){
+                    var user = result.data
+                    resolve(user);
+                    // user로 할일 - 3
+                    console.log('PostAuthor');
+                }
+                });
+            });
+        }
+            
+        function errorHandler(value){
+            console.log("error: ", value);
+        }
+            
+        getPosts()
+        .then(getFirstPost)
+        .then(getPostAuthor)
+        .catch(errorHandler);
+        </pre>
+    </div>
+  </div>
+  <div id="links">
+    <h3>Links</h3>
+    <ul>
+      <li>TEST</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

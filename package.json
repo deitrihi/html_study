@@ -1,0 +1,25 @@
+{
+  "name": "html_study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run webpack",
+    "webpack": "webpack",
+    "http-server": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deitrihi/html_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deitrihi/html_study/issues"
+  },
+  "homepage": "https://github.com/deitrihi/html_study#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {}
+}

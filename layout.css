@@ -12,6 +12,7 @@ a:hover { text-decoration:underline}
 #content { position:relative; background: #999; font-size:small; font-family:Verdana; color:#FFF; width:60%; float:left;}
 #content h3 { margin-bottom:1em}
 #text { margin:20px; margin-top:0; line-height:150%; font-family:Verdana}
+.text { margin:20px; margin-top:0; line-height:150%; font-family:Verdana}
 #text table { border-left:1px solid #CCC; border-top:1px solid #CCC}
 #text table caption { font-weight:bold; text-align:left}
 #text table th { background:#666}
@@ -24,3 +25,6 @@ a:hover { text-decoration:underline}
 
 #text pre textarea { border: solid 1px white; width:90%; height:200px; background-color:#333; color:#FFF}
 #text iframe { border:1px solid white; width:100%; background-color:#333; color:#FFF}
+
+.text { margin:20px; margin-top:0; line-height:150%; font-family:Verdana}
+.text pre textarea { border: solid 1px white; width:90%; height:200px; background-color:#333; color:#FFF}
