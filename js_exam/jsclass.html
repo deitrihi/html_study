@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Javascript Class</title>
+    <link href="../layout.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./js/jsclass.js"></script>
+</head>
+<body>
+<h1>Javascript Test</h1>
+<div id="center">
+  <div id="menu">
+    <h2>샘플</h2>
+    <ul>
+      <li><a href="./letExam.html">let Exam</a></li>
+      <li><a href="./promiseExam.html">Promise Exam</a></li>
+      <li><a href="./jsmodule.html">JS Mobule</a></li>
+      <li><a href="./forof.html">For ~ of</a></li>
+      <li><a href="./jsclass.html">Class</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h3>Javascript Class</h3>
+    <div class="text">
+      Class is Function, 
+      Function is not Class
+    </div>
+    <h3>Exam</h3>
+    <div class="text">
+        <pre>
+            var student = {
+                name : 'test',
+                printName: function() { 
+                    console.log('TTT : ' + this.name);
+                },
+                student: function(name) { 
+                    this.name = name;
+                }
+            }
+            
+            student.printName();
+            function Student(name) {
+                this.name = name;
+            }
+            
+            Student.prototype.printName = function() { 
+                console.log(this.name);
+            }
+            
+            var stu1 = new Student('TEST1');
+            var stu2 = new Student('TEST2');
+            
+            stu1.printName();
+            stu2.printName();
+            
+            class Stu {
+                constructor(name) {
+                    this.name = name;
+                }
+            
+                printName() {
+                    console.log(this.name);
+                }
+            }
+            var s1 = new Stu('stu1');
+            console.log(s1.name);
+            s1.printName();
+            
+            var Stu2 = class { 
+                constructor(age) {
+                    this.age = age;
+                }
+            
+                printAge() { 
+                    console.log(this.age);
+                }
+            }
+            
+            class B extends Stu2 {
+                printAge() { 
+                    console.log(this.age + 10);
+                }
+            }
+            
+            var s2 = new B(10);
+            s2.printAge();
+            s2.age = 5;
+            s2.printAge();
+            
+            class C {
+                constructor(age) { 
+                    this._age_ = age;
+                }
+                get age() { 
+                    return this._age_;
+                }
+                set age(age) { 
+                    this._age_ = age;
+                }
+            
+                printAge() { 
+                    console.log(this._age_);
+                }
+            
+                static calAge(c) { 
+                    return c._age_;
+                }
+            
+                static print(s) { 
+                    console.log(s);
+                }
+            }
+            
+            var s3 = new C(10);
+            s3.printAge();
+            s3.age = 20;
+            s3.printAge();
+            var s3_age = C.calAge(s3);
+            console.log(s3_age);
+            
+            C.print('PRINT TEST');
+        </pre>
+    </div>
+  </div>
+  <div id="links">
+    <h3>Links</h3>
+    <ul>
+      <li>TEST</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
