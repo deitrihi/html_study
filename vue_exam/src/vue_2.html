@@ -1,0 +1,61 @@
+<!-- build:title -->
+Vue 조건문과 반복문
+<!-- /build:title -->
+<!-- build:head -->
+<script type="text/javascript" src="./js/vue_2.js" defer></script>
+<!-- /build:head -->
+<!-- build:content -->
+<div id="simple">
+    <h2>조건문과 반복문</h2>
+    <div id="app-3" class="text">
+        <p v-if="seen">조건문</p>
+    </div>
+    <pre>
+        &lt;div id="app-3" class="text">
+            &lt;p <b>v-if="seen"</b>>보임?&lt;/p>
+            
+            var app3 = new Vue( { 
+                el : "#app-3",
+                data : {
+                    seen:true
+                }
+            })
+
+        TEST
+        console> app3.seen = false
+        console> app3.seen = true
+    </pre>
+
+    <div id="app-for" class="text">
+        <ul>
+            <li v-for="todo in todos">
+                {{todo.no}}. {{todo.text}}
+            </li>
+        </ul>
+    </div>
+    <pre>
+        &lt;div id="app-for" class="text">
+            &lt;ul>
+                &lt;li v-for="todo in todos">
+                    {{todo.no}}. {{todo.text}}
+                &lt;/li>
+            &lt;/ul>
+        &lt;/div>
+
+        var app_for = new Vue( { 
+            el : "#app-for",
+            data : {
+                todos : [
+                    {no:1, text:'first'},
+                    {no:2, text:'second'},
+                    {no:3, text:'third'}
+                ]
+            }
+        })
+
+        TEST
+        console>app_for.todos.push({no:4, text:'fourth'})
+    </pre>
+    
+</div>
+<!-- /build:content -->

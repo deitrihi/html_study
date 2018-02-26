@@ -1,0 +1,58 @@
+<!-- build:title -->
+Vue 컴포넌트
+<!-- /build:title -->
+<!-- build:head -->
+<script type="text/javascript" src="./js/vue_4.js" defer></script>
+<!-- /build:head -->
+<!-- build:content -->
+<div id="simple">
+    <h2>컴포넌트</h2>
+    <div id="app" class="text">
+        <ol>
+            <todo-item></todo-item>
+        </ol>
+    </div>
+    <pre>
+            &lt;div id="app" class="text">
+                &lt;ol>
+                    &lt;todo-item>&lt;/todo-item>
+                &lt;/ol>
+            &lt;/div>
+            
+            Vue.component('todo-item', {
+                template:'&lt;li>항목&lt;/li>'
+            });
+            
+            var app = new Vue({
+                el: '#app'
+            });
+    </pre>
+    <div id="app2" class="text">
+        <ol>
+            <todo-item2 v-for="item in model" v-bind:todo="item" v-bind:key="item.id"></todo-item2>
+        </ol>
+    </div>
+    <pre>
+            &lt;div id="app2" class="text">
+                &lt;ol>
+                    &lt;todo-item2 v-for="item in model" v-bind:todo="item" v-bind:key="item.id">&lt;/todo-item2>
+                &lt;/ol>
+            &lt;/div>
+            Vue.component('todo-item2', {
+                props: ['todo'],
+                template: '&lt;li>{{todo.no}}. {{todo.text}}&lt;/li>'
+            });
+            
+            var data = {model: [
+                {id:0, no:1, text:'One'},
+                {id:1, no:2, text:'Two'},
+                {id:2, no:3, text:'Three'}
+            ]};
+            
+            var app2 = new Vue({
+                el:'#app2',
+                data : data
+            });
+    </pre>
+</div>
+<!-- /build:content -->

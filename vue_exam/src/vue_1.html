@@ -1,0 +1,32 @@
+<!-- build:title -->
+Vue No.1
+<!-- /build:title -->
+<!-- build:head -->
+<script type="text/javascript" src="./js/vue_1.js" defer></script>
+<!-- /build:head -->
+<!-- build:content -->
+<div id="simple" v-bind:title="title">
+    <h2>{{message}}</h2>
+    <div class="text">
+        사용자 인터페이스를 만들기 위한 진보적인 프레임워크 입니다<br>
+        다른 단일형 프레임워크와 달리 Vue는 점진적으로 채택할 수 있도록 설계하였습니다. 핵심 라이브러리는 뷰 레이어만 초점을 맞추어 다른 라이브러리나 기존 프로젝트와의 통합이 매우 쉽습니다. 그리고 Vue는 현대적 도구 및 지원하는 라이브러리와 함께 사용한다면 정교한 단일 페이지 응용프로그램을 완벽하게 지원할 수 있습니다.
+    </div>
+    <pre>
+        //HTML
+        //&lt;div id="simple" v-bind:title="title">
+        //    &lt;h2>{{message}}&lt;/h2>
+        //&lt;/div>
+        // 모델 선언.
+        var model = {
+            message: 'Vue?',
+            title: new Date()
+        };
+        
+        // VM 선언
+        var simple = new Vue({
+            el : '#simple',
+            data:model
+        })
+    </pre>
+</div>
+<!-- /build:content -->

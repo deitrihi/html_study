@@ -1,0 +1,44 @@
+<!-- build:title -->
+Vue 사용자 입력
+<!-- /build:title -->
+<!-- build:head -->
+<script type="text/javascript" src="./js/vue_3.js" defer></script>
+<!-- /build:head -->
+<!-- build:content -->
+<div id="simple">
+    <h2>사용자 입력</h2>
+    <div id="app" class="text">
+        <p>{{message}}</p>
+        <button v-on:click="alertMessage">메시지 띄우기</button>
+    </div>
+    <pre>
+        &lt;div id="app-3" class="text">
+            &lt;p>{{message}}&lt;/p>
+            &lt;button v-on:click="alertMessage">메시지 띄우기&lt;/button>
+        &lt;/div>
+
+        var app = new Vue({
+            el : '#app',
+            data : {
+                message: 'Message!!'
+            },
+            methods: {
+                alertMessage:function() {
+                    this.message = prompt(this.message);
+                }
+            }
+        });
+    </pre>
+    <div id="app2" class="text">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+    <pre>
+        &lt;div id="app2" class="text">
+            &lt;p>{{message}}&lt;/p>
+            &lt;input v-model="message">
+        &lt;/div>
+        
+    </pre>
+</div>
+<!-- /build:content -->
